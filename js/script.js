@@ -8,7 +8,7 @@ const { createApp } = Vue
 createApp({
   data() {
     return {
-      oddsList : [],
+      oddList : [],
       evenList : []
     }
   },
@@ -17,9 +17,9 @@ createApp({
       axios.get("https://flynn.boolean.careers/exercises/api/random/int")
         .then((response) => {
               console.log(response.data.response)
-              response.data.response % 2 === 0 ? this.evenList.push(response.data.response) : this.oddsList.push(response.data.response)
+              response.data.response % 2 === 0 ? this.evenList.push(response.data.response) : this.oddList.push(response.data.response)
         })
-        console.log(this.oddsList, this.evenList)
+        console.log(this.oddList, this.evenList)
     },
   },
   created(){

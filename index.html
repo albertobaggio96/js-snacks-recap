@@ -11,8 +11,8 @@
 
   <div id="app">
     <button @click="getNumber()">numero</button>
-    <div class="even" v-for="even in evenList">{{even}}</div>
-    <div class="odd" v-for="odd in oddsList">{{odd}}</div>
+    <div class="even">{{evenList.join(", ")}}</div>
+    <div class="odd">{{oddList.join(", ")}}</div>
   </div>
   
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
