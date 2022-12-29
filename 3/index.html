@@ -13,7 +13,7 @@
 
   <div id="app" class="row flex-column">
     <input type="text" class="col-6" v-model="writedText" @keyup.enter="getSentMessage(writedText)">
-    <div v-for="message in messages" :class="message.status === 'sent' ? 'bg-info offset-6 col-6 text-end pe-5' : 'col-6 bg-light ps-5'" class="me-5 p-2 ">{{message}}</div>
+    <div v-for="message in messages" :class="message.status === 'sent' ? 'bg-info offset-6 col-6 text-end pe-5' : 'col-6 bg-light ps-5'" class="me-5 p-2 ">{{message.message}}</div>
   </div>
   
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
