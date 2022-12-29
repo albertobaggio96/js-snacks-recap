@@ -9,30 +9,40 @@ createApp({
     return {
       messages: [],
 
-      writedText: ""
+      writedText: "",
+
+      randomSentence: "",
     }
   },
   methods:{
-    // getNumber(){
-    //   axios.get("https://flynn.boolean.careers/exercises/api/random/sentence")
-    //     .then((response) => {
-    //       console.log(response.data.response)
+    getSentence(){
+      axios.get("https://flynn.boolean.careers/exercises/api/random/sentence")
+        .then((response) => {
+          console.log(response.data.response);
+          this.randomSentence = {
+            message : response.data.response,
+            status : "recived"
+          }
+          this.messages.push(this.randomSentence);
+       })
+    },
 
-    //     })
-    // },
     getSentMessage(text){
       text = {
         message : text,
         status : "sent"
       }
-      this.messages.push(text)
+      this.messages.push(text);
 
-      this.writedText = ""
+      this.writedText = "";
+
+      setTimeout(() => {
+
+        this.getSentence()
+
+      }, 1000);
     }
   },
-  created(){
-    
-  }
   
 }).mount('#app')
 
