@@ -24,11 +24,11 @@ createApp({
       })
         .then((response) => {
               console.log(response.data.response)
-              let sum = 0
+              let sum = 0;
               response.data.response.forEach(element => {
-                return sum += element
-              });
-              this.result = sum
+                return sum += element;
+              })
+              this.result = sum;
               
         })
         console.log(this.oddList, this.evenList)
